@@ -12,5 +12,5 @@ RUN pip3 install uwsgi
 
 RUN echo -e "uwsgi\nuwsgi" | adduser uwsgi
 
-EXPOSE 45380
+EXPOSE 5000
 CMD ["uwsgi", "--ini", "app.ini"]
