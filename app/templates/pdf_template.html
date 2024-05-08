@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Kaushan Script"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+          "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      }
+      .navbar {
+        text-align: center;
+        border-top: 2px solid #32ea91;
+        margin-bottom: 30px;
+      }
+      .navbar-brand {
+        margin-left: 50px;
+        font-family: "Kaushan Script";
+        font-size: 56px;
+        color: #111111;
+      }
+      .navbar-brand i {
+        color: #32ea91;
+        margin-right: 5px;
+      }
+      .breadcrumb-area {
+        color: white;
+        background-position: center center;
+        background-size: cover;
+        height: 250px;
+      }
+      .breadcrumb-bg {
+        position: relative;
+      }
+      .breadcrumb-bg::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background-image: -moz-linear-gradient(
+          -38deg,
+          rgb(32, 42, 174) 0%,
+          rgb(40, 167, 69) 99%
+        );
+        background-image: -webkit-linear-gradient(
+          -38deg,
+          rgb(32, 42, 174) 0%,
+          rgb(40, 167, 69) 99%
+        );
+        background-image: -ms-linear-gradient(
+          -38deg,
+          rgb(32, 42, 174) 0%,
+          rgb(40, 167, 69) 99%
+        );
+        opacity: 0.8;
+      }
+      .wrapper {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+      }
+      .up-tag {
+        position: inherit;
+        bottom: 0;
+        background: #25c97a;
+        padding: 8px 15px;
+        border-radius: 4px;
+        display: inline-block;
+        margin-bottom: 15px;
+        left: 0;
+        margin-right: 15px;
+      }
+      .up-tag span {
+        font-family: "Poppins", sans-serif;
+        font-size: 16px;
+        color: #fff;
+        font-weight: 600;
+      }
+      .up-event-meta {
+        margin-bottom: 12px;
+      }
+      .up-event-meta span {
+        font-weight: 600;
+        font-size: 18px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-right: 10px;
+        line-height: 2.1;
+      }
+      .up-event-meta span:last-child {
+        margin-right: 0;
+      }
+      .up-event-meta span i {
+        margin-right: 3px;
+        color: #202aae;
+      }
+      .attendee h3 {
+        margin: 0;
+        margin-bottom: 5px;
+        font-weight: 600;
+        font-size: 14px;
+        color: darkgrey;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      .attendee h4 {
+        margin: 0;
+        margin-bottom: 5px;
+        font-weight: 600;
+        font-size: 16px;
+        letter-spacing: 0.5px;
+      }
+      #qrcode {
+        width: 200px;
+        height: 200px;
+        margin: 0px 45px 15px 0;
+      }
+    </style>
+
+    <title>Ticket Free</title>
+  </head>
+
+  <body>
+    <div class="navbar">
+      <div class="navbar-brand">
+        <i class="fas fa-ticket-alt"></i>
+        Ticket Free
+      </div>
+    </div>
+    <div class="wrapper">
+      <div id="qrcode"></div>
+      <div>
+        <h1>{{event.name}}</h1>
+        <div class="wrapper">
+          <div class="up-tag">
+            <span>${{event.price}}</span>
+          </div>
+          <div class="up-event-meta">
+            <span> <i class="fas fa-calendar-alt"></i> {{event.date}}</span>
+            <span> <i class="fas fa-clock"></i> {{event.time}}</span>
+            <span> <i class="fas fa-users"></i> {{event.capacity}}</span>
+          </div>
+        </div>
+        <div class="attendee">
+          <h3>Attendee Details</h3>
+          <h4>Full Name: {{name | safe}}</h4>
+          <h4>Email: {{email | safe}}</h4>
+        </div>
+      </div>
+    </div>
+    <div
+      class="breadcrumb-area breadcrumb-bg"
+      style="
+        background-image: url({{event.image}});
+      "
+    ></div>
+  </body>
+  <script>
+    var qrcode = new QRCode("qrcode", {
+      text: "{{name}} - {{email}} - {{event.name}}",
+      width: 200,
+      height: 200,
+      colorDark: "#000000",
+      colorLight: "#ffffff",
+    });
+  </script>
+</html>

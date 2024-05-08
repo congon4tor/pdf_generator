@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Kaushan Script"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background: #f2f5fa;
+      }
+      .navbar {
+        background: #161817;
+        border-top: 2px solid #32ea91;
+        height: 130px;
+      }
+      .navbar-brand {
+        margin-left: 50px;
+        font-family: "Kaushan Script";
+        font-size: 40px;
+      }
+      .navbar-brand i {
+        color: #32ea91;
+        margin-right: 15px;
+      }
+      .breadcrumb-area {
+        color: white;
+      }
+      .pb-265 {
+        padding-bottom: 265px;
+      }
+      .pt-260 {
+        padding-top: 260px;
+      }
+      .breadcrumb-area {
+        background-position: center center;
+        background-size: cover;
+      }
+      .breadcrumb-bg {
+        position: relative;
+      }
+      .breadcrumb-bg::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background-image: -moz-linear-gradient(
+          -38deg,
+          rgb(32, 42, 174) 0%,
+          rgb(40, 167, 69) 99%
+        );
+        background-image: -webkit-linear-gradient(
+          -38deg,
+          rgb(32, 42, 174) 0%,
+          rgb(40, 167, 69) 99%
+        );
+        background-image: -ms-linear-gradient(
+          -38deg,
+          rgb(32, 42, 174) 0%,
+          rgb(40, 167, 69) 99%
+        );
+        opacity: 0.8;
+      }
+      .breadcrumb-text > h1 {
+        font-size: 55px;
+        margin-bottom: 20px;
+        text-transform: capitalize;
+        line-height: 1;
+        font-weight: 600;
+        color: #ffff;
+      }
+      .upcoming-event-wrapper {
+        padding: 30px 30px 30px 30px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0px 10px 30px 0px rgba(222, 222, 222, 0.53);
+      }
+      .mb-30 {
+        margin-bottom: 30px;
+      }
+      .upcoming-event-img {
+        position: relative;
+      }
+      .upcoming-event-img > a img {
+        width: 100%;
+      }
+      .up-tag {
+        position: absolute;
+        top: 20px;
+        background: #25c97a;
+        right: 20px;
+        padding: 4px 15px;
+        border-radius: 4px;
+      }
+      .up-tag span {
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+        color: #fff;
+        font-weight: 600;
+      }
+      .upcoming-text {
+        margin-top: 28px;
+      }
+      .upcoming-text h3 {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 12px;
+      }
+      .upcoming-text h3 > a {
+        color: #111111;
+        transition: 0.3s;
+      }
+      .up-event-meta {
+        margin-bottom: 12px;
+      }
+      .up-event-meta span {
+        font-weight: 900;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.4px;
+        margin-right: 8px;
+        line-height: 2.1;
+      }
+      .up-event-meta span:last-child {
+        margin-right: 0;
+      }
+      .up-event-meta span i {
+        margin-right: 3px;
+        color: #202aae;
+      }
+      .upcoming-text p {
+        margin-bottom: 30px;
+        color: #31363b;
+        font-size: 14px;
+        font-weight: normal;
+        line-height: 28px;
+      }
+      .upcoming-text > a.btn {
+        padding: 18px 42px;
+        font-size: 13px;
+        background: #eef4fd;
+      }
+      .upcoming-text > a.btn:hover {
+        background: #d3e4fd;
+      }
+      .btn-text {
+        color: #111;
+        position: relative;
+        z-index: 9999;
+        transition: 0.3s;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-align: center;
+        text-transform: uppercase;
+      }
+      .btn-border {
+        height: 2px;
+        width: 40px;
+        background: #111111;
+        display: inline-block;
+        position: relative;
+        top: -3px;
+        left: 7px;
+        transition: 0.3s;
+      }
+    </style>
+    <style media="screen and (max-width: 767px)">
+      .breadcrumb-area {
+        padding-top: 150px;
+        padding-bottom: 150px;
+      }
+    </style>
+    <title>Ticket Free</title>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-dark">
+      <a class="navbar-brand" href="/">
+        <i class="fas fa-ticket-alt"></i>
+        Ticket Free
+      </a>
+    </nav>
+    <div
+      class="breadcrumb-area breadcrumb-bg pt-260 pb-265"
+      style="
+        background-image: url(https://images.unsplash.com/photo-1565511718486-fa62742277f3?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1267&q=80);
+      "
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-12">
+            <div class="breadcrumb-text text-center">
+              <h1>Check out our free events!</h1>
+              <h3>Quick book a ticket before they run out</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container pt-5">
+      <div class="row">
+        {% for event in events %}
+        <div class="col-xl-4 col-lg-6 col-md-6">
+          <div class="mb-30">
+            <div class="upcoming-event-wrapper mb-30">
+              <div class="upcoming-event-img">
+                <a href="/event/{{event.id}}"
+                  ><img src="{{event.image}}" alt=""
+                /></a>
+                <div class="up-tag">
+                  <span>$ {{event.price}}</span>
+                </div>
+              </div>
+              <div class="upcoming-text">
+                <h3>
+                  <a href="/event/{{event.id}}">{{event.name}}</a>
+                </h3>
+                <div class="up-event-meta">
+                  <span>
+                    <i class="fas fa-calendar-alt"></i> {{event.date}}</span
+                  >
+                  <span> <i class="fas fa-clock"></i> {{event.time}}</span>
+                  <span> <i class="fas fa-users"></i> {{event.capacity}}</span>
+                </div>
+                <p>{{event.description}}</p>
+                <a class="btn" href="/event/{{event.id}}"
+                  ><span class="btn-text"> Book Ticket</span>
+                  <span class="btn-border"></span
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </body>
+</html>

